@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Cars",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "model": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    },
+    "lap_times": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lap-time.lap-time",
+      "mappedBy": "car"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game.game"
+    },
+    "year": {
+      "type": "string"
+    },
+    "horsepower": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "string"
+    }
+  }
+}

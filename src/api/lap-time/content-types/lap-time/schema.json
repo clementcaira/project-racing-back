@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lap_times",
+  "info": {
+    "singularName": "lap-time",
+    "pluralName": "lap-times",
+    "displayName": "Lap Times"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "game": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game.game"
+    },
+    "time": {
+      "type": "integer"
+    },
+    "car": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::car.car",
+      "inversedBy": "lap_times"
+    },
+    "circuit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::circuit.circuit",
+      "inversedBy": "lap_times"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "circuits",
+  "info": {
+    "singularName": "circuit",
+    "pluralName": "circuits",
+    "displayName": "Circuits"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true
+    },
+    "lap_times": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lap-time.lap-time"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::game.game"
+    }
+  }
+}
